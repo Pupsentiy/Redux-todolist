@@ -1,4 +1,4 @@
-import { ADD_TODO, EDIT_TODO, REMOVE_TODO } from "./actionTypes";
+import { ADD_TODO, COMPLETED, REMOVE_TODO } from "./actionTypes";
 
 export const addTodo = text => ({
     type: ADD_TODO,
@@ -12,9 +12,8 @@ export const removeTodo = id => {
     }
 }
 
-export const editTodo = id => { 
-    return { 
-        type: EDIT_TODO,
-        payload: id
-    }
-}
+export const completed = id => ({ 
+        type: COMPLETED,
+        payload: id, 
+       
+})
