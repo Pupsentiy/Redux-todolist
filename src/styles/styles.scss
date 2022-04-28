@@ -1,44 +1,92 @@
-
-body{
-    background-color: #00688b;
+body {
+    background-color: #16647c;
     font-family: sans-serif;
-    
-    .header{
+
+    .header {
         text-align: center;
         color: aliceblue;
     }
 
-    .main{
+    .main {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 50%;
+        margin-bottom: 10px;
+
+        & .css-sghohy-MuiButtonBase-root-MuiButton-root {
+            height: 54px;
+            margin: 0px 10px;
+            background-color: #9024f34f;
+            border-radius: 30px;
+        }
     }
 
-    .container{
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: chocolate;
-       & .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-           height: 40px;
-           padding: 0px 5px;
-       }
 
-            .completed{
-                height: 40px;
+        & .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+            height: 30px;
+            padding: 0px 5px;
+            width: 440px;
+        }
 
+        & .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+            margin-top: 10px;
+        }
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: aquamarine;
-                color: red;
-
+        .completed {
+            & .css-ahj2mt-MuiTypography-root {
+                min-width: 600px;
+                overflow-wrap: break-word;
+                max-width: 600px;
+                text-decoration: line-through;
             }
-            .notCompleted{
-                background-color: brown;
-                color: yellow;
+
+            & .css-i4bv87-MuiSvgIcon-root {
+                color: #8d0000;
             }
+
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 40px;
+            border-bottom: solid 2px red;
+            border-left: solid 2px red;
+            box-shadow: 0px -1px 5px 0px;
+            border-radius: 3px;
+        }
+
+        .notCompleted {
+            & .css-ahj2mt-MuiTypography-root {
+                min-width: 600px;
+                overflow-wrap: break-word;
+                max-width: 600px;
+            }
+
+            & .css-i4bv87-MuiSvgIcon-root {
+                color: greenyellow;
+            }
+
+            &.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+                &:active {
+                    color: #8d0000;
+                }
+            }
+
+            color: aliceblue;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 40px;
+            border-bottom: solid 2px greenyellow;
+            border-left: solid 2px greenyellow;
+            box-shadow: 0px -1px 5px 0px;
+            border-radius: 3px;
+        }
     }
 }

@@ -1,27 +1,29 @@
 import { useDispatch } from "react-redux";
 import React, { useState } from 'react'
 import { addTodo } from "../store/action/actionCreators";
-import { Container, TextField } from "@mui/material";
-import AddBoxIcon from '@mui/icons-material/AddBox';
+import { Button, Container, TextField } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 
 const Main = () => {
   const [text, setText] = useState('')
   const dispatch = useDispatch();
-  
-  const addTask = () =>{
+
+  const addTask = () => {
     if (text === "") return;
     dispatch(addTodo(text))
     setText('')
   }
 
-return (
+  return (
     <Container className="main">
       <TextField
         onChange={(event) =>
           setText(event.target.value)}
-        value={text} 
-        fullWidth/>
-      <AddBoxIcon onClick={addTask} />
+        value={text}
+        fullWidth />
+      <Button className="button__Add" variant="contained" onClick={addTask} endIcon={<SendIcon />}>
+        add
+      </Button>
     </Container>
   )
 }

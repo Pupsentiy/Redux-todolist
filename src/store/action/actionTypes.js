@@ -1,3 +1,5 @@
 export const ADD_TODO = 'ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const COMPLETED = 'COMPLETED'
+export const UPTASK = 'UPTASK'
+export const DOWNTASK = 'DOWNTASK'

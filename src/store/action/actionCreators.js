@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETED, REMOVE_TODO } from "./actionTypes";
+import { ADD_TODO, COMPLETED, DOWNTASK, REMOVE_TODO, UPTASK } from "./actionTypes";
 
 export const addTodo = text => ({
     type: ADD_TODO,
@@ -16,4 +16,15 @@ export const completed = id => ({
         type: COMPLETED,
         payload: id, 
        
+})
+
+export const upTask = id => ({
+    type: UPTASK,
+    payload: id,
+
+})
+
+export const downTask = (id) => ({
+    type: DOWNTASK,
+    payload: id,
 })

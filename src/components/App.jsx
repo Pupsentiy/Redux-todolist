@@ -7,7 +7,7 @@ function App() {
     <>
       <Header/>
       <Main/>
-      <ViewTodo/>
+      <ViewTodo />
     </>
   );
 }
