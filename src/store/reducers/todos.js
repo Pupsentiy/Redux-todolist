@@ -52,7 +52,7 @@ export const todos = (state = initialState, action) => {
         case DOWNTASK: {
             const { todos } = state
             const index = todos.findIndex(todo => todo.id === action.payload); 
-            if (index >= - 1 && todos.length > 1) {
+            if (index >= 0 && todos.length > 1) {
                 const newState = [...todos];
                 [newState[index], newState[index + 1]] = [newState[index + 1], newState[index]];
                 return {todos: newState}

@@ -37,8 +37,7 @@ const ViewTodo = () => {
   const upTodo = (id) => {
     dispatch(upTask(id))
   }
-  const downTodo = (id, index) => {
-    if (index === todos.length - 1) return
+  const downTodo = (id) => {
     dispatch(downTask(id))
   }
 
@@ -46,14 +45,30 @@ const ViewTodo = () => {
     todos && todos.map((todo, index) => (
       <Box key={todo.id} className="container">
         {fieldСhange === todo.id ?
-          <TextField value={textChange} onChange={(e) => setTextChange(e.target.value)} onBlur={() => saveCnange(todo.id, todo.text)} />
+          <TextField
+            value={textChange}
+            onChange={(e) => setTextChange(e.target.value)}
+            onBlur={() => saveCnange(todo.id, todo.text)}
+          />
           :
           <Box className={todo.completed ? 'completed' : 'notCompleted'}>
-            <Button onClick={() => upTodo(todo.id)} ><ArrowCircleUpIcon /></Button>
-            <Button onClick={() => downTodo(todo.id, index )} ><ArrowCircleDownIcon /></Button>
-            <Typography onClick={() => update(todo.id, todo.text)}>{todo.text}</Typography>
-            <Checkbox onClick={() => check(todo.id)} />
-            <Button onClick={() => deleteTodo(todo.id)} ><DeleteForeverIcon /></Button>
+            <Button
+              disabled={index === 0 ? true : false}
+              onClick={() => upTodo(todo.id)}>
+              <ArrowCircleUpIcon htmlColor={index === 0 ? 'gray' : '#000'}/>
+            </Button>
+            <Button
+              disabled={index === todos.length - 1 ? true : false}
+              onClick={() => downTodo(todo.id, index)}>
+              <ArrowCircleDownIcon htmlColor={index === todos.length - 1 ? 'gray' : '#000'}/>
+            </Button>
+            <Typography onClick={() => update(todo.id, todo.text)}>
+              {todo.text}
+            </Typography>
+            <Checkbox color="default" onClick={() => check(todo.id)} />
+            <Button onClick={() => deleteTodo(todo.id)}>
+              <DeleteForeverIcon htmlColor={'#000'}/>
+            </Button>
           </Box>
         }
       </Box>

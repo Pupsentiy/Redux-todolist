@@ -21,7 +21,12 @@ const Main = () => {
           setText(event.target.value)}
         value={text}
         fullWidth />
-      <Button className="button__Add" variant="contained" onClick={addTask} endIcon={<SendIcon />}>
+      <Button
+        className="button__Add"
+        variant="contained"
+        onClick={addTask}
+        endIcon={<SendIcon />}
+      >
         add
       </Button>
     </Container>
